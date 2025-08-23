@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grand Theft Auto VI - Premiera</title>
+    
+    <!-- Meta Tagi dla Embedowania -->
+    <meta property="og:title" content="Grand Theft Auto VI - Premiera">
+    <meta property="og:description" content="Odkryj najnowszą odsłonę kultowej serii GTA. Sprawdź odliczanie do premiery na konsole i PC.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://twojadomena.com/gta-vi-premiera">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grand Theft Auto VI - Premiera">
+    <meta name="twitter:description" content="Odkryj najnowszą odsłonę kultowej serii GTA. Sprawdź odliczanie do premiery na konsole i PC.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Resetowanie stylów i zmienne CSS */
@@ -719,21 +732,23 @@
     <!-- Stopka -->
     <footer>
         <div class="container">
-
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
             </div>
-            <p class="copyright">Sprawdz kiedy wychodzi GTAVI premiera na Konsole i Komputery</p>
+            <p class="copyright">Sprawdź kiedy wychodzi GTAVI premiera na Konsole i Komputery</p>
         </div>
     </footer>
 
     <script>
-        // Inicjalizacja po załadowaniu DOM
         document.addEventListener('DOMContentLoaded', function() {
-            // Animowane tło - particle system
             const canvas = document.getElementById('particle-canvas');
             const ctx = canvas.getContext('2d');
             let particlesArray = [];
             
-            // Dostosowanie canvas do rozmiaru okna
             function setCanvasSize() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
@@ -741,7 +756,6 @@
             setCanvasSize();
             window.addEventListener('resize', setCanvasSize);
             
-            // Klasa cząsteczki
             class Particle {
                 constructor() {
                     this.x = Math.random() * canvas.width;
@@ -772,7 +786,6 @@
                 }
             }
             
-            // Inicjalizacja cząsteczek
             function init() {
                 particlesArray = [];
                 const numberOfParticles = (canvas.width * canvas.height) / 9000;
@@ -782,7 +795,6 @@
                 }
             }
             
-            // Łączenie cząsteczek liniami
             function connect() {
                 const maxDistance = 100;
                 for (let a = 0; a < particlesArray.length; a++) {
@@ -804,7 +816,6 @@
                 }
             }
             
-            // Animacja
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
@@ -820,14 +831,12 @@
             init();
             animate();
             
-            // Odliczanie czasu
             const consoleDate = new Date('May 26, 2026 00:00:00').getTime();
             const pcDate = new Date('December 31, 2026 00:00:00').getTime();
             
             function updateCountdown() {
                 const now = new Date().getTime();
                 
-                // Odliczanie dla konsoli
                 const consoleDistance = consoleDate - now;
                 const consoleDays = Math.floor(consoleDistance / (1000 * 60 * 60 * 24));
                 const consoleHours = Math.floor((consoleDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -839,7 +848,6 @@
                 document.getElementById('console-minutes').textContent = consoleMinutes;
                 document.getElementById('console-seconds').textContent = consoleSeconds;
                 
-                // Odliczanie dla PC
                 const pcDistance = pcDate - now;
                 const pcDays = Math.floor(pcDistance / (1000 * 60 * 60 * 24));
                 const pcHours = Math.floor((pcDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -852,11 +860,9 @@
                 document.getElementById('pc-seconds').textContent = pcSeconds;
             }
             
-            // Aktualizuj odliczanie co sekundę
             setInterval(updateCountdown, 1000);
-            updateCountdown(); // Inicjalne wywołanie
+            updateCountdown();
             
-            // Obsługa menu mobilnego
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
             
@@ -865,7 +871,6 @@
                 navLinks.classList.toggle('active');
             });
             
-            // Zamknij menu po kliknięciu w link
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     hamburger.classList.remove('active');
@@ -873,7 +878,6 @@
                 });
             });
             
-            // Animacja pojawiania się elementów przy scrollowaniu
             const fadeElements = document.querySelectorAll('.fade-in');
             
             function checkFade() {
@@ -890,9 +894,8 @@
             
             window.addEventListener('scroll', checkFade);
             window.addEventListener('resize', checkFade);
-            checkFade(); // Inicjalne wywołanie
+            checkFade();
             
-            // Obsługa FAQ
             const faqQuestions = document.querySelectorAll('.faq-question');
             
             faqQuestions.forEach(question => {
@@ -912,7 +915,6 @@
                 });
             });
             
-            // Dodanie smooth scroll dla wszystkich anchor linków
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
